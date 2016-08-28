@@ -7,3 +7,108 @@ pwd
 cd learngit
 git init --初始化仓库
 
+git add git.txt --把文件添加到仓库
+git commit -m "wrote a git file" --把文件提交到仓库
+
+git add git.txt 
+
+--修改git文件
+
+git status
+
+git diff
+
+git add git.txt
+
+git commit -m "update git.txt"
+
+git log --查看日志
+
+git log --pretty=oneline --日志格式化(过去的)
+
+cat git.txt --查看文件内容
+
+git reset --hard HEAD^ --回退到上一个版本
+
+git reflog --查看之前的操作 (回到未来)
+
+git reset --hard 3628164 --具体回到某个版本号
+
+
+管理修改:
+
+git add new.txt --修改后添加
+
+git status
+
+--再次修改
+
+git commit -m "修改"
+
+git diff HEAD -- new.txt --对比查看
+
+git status
+
+git add new.txt
+
+git commit -m "提交"
+
+--第一次修改 -> git add -> 第二次修改 -> git add -> git commit;每次修改，如果不add到暂存区，那就不会加入到commit中。
+
+撤销修改:
+
+cat new.txt
+
+git status
+
+--修改new.txt
+
+git checkout --new.txt --丢弃工作区修改
+
+--修改new.txt
+
+git status
+
+git add new.txt --加载到暂存区
+
+git reset HEAD new.txt --把缓存区的修改撤销掉,重新放回工作区
+
+git status
+
+git checkout --new.txt --丢弃工作区修改
+
+删除文件:
+
+touch rm.txt
+
+git add test.txt
+
+git commit -m "提交文件"
+
+git status
+
+rm test.txt
+
+git status
+
+git checkout -- test.txt --丢弃删除
+
+rm test.txt
+
+git rm test.txt
+
+git commit -m "remove test.txt"
+
+
+远程仓库:
+
+ssh-keygen -t rsa -C "email@example.com"
+
+--用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥
+
+登陆GitHub，打开“Account settings”，“SSH Keys”页面： “Add SSH Key”
+
+git remote add origin git@github.com:JavaCrazyEngineer/learngit.git --一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库
+
+git push -u origin master --当前分支master推送到远程
+
