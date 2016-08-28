@@ -1,0 +1,9 @@
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+
+pwd
+mkdir learngit
+pwd 
+cd learngit
+git init --初始化仓库
+
